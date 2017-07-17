@@ -5,20 +5,21 @@ import java.sql.*;
 public class MainModel {
 	Connection conection;
 	public MainModel() {
-		conection = SQLiteConnection.Connector();
+		conection = SQLiteConnection.Connector();// creating new connection to database
 		if (conection == null) System.exit(1);
 	}
+	
+	//insertSum method, inserts the name and the sum to the database
 	
 	public void insertSum(String name, int sum) throws SQLException {
 		PreparedStatement prepareStatement = null;
 		ResultSet resultSet = null;
-		String query = "Insert into Income (Name, Sum) values (?, ?)";
+		String query = "Insert into Income (Name, Sum) values (?, ?)"; //Table name "Income"
 		try {
 			prepareStatement = conection.prepareStatement(query);
 			prepareStatement.setString(1, name);
 			prepareStatement.setInt(2, sum);
-			prepareStatement.execute();
-			//resultSet = prepareStatement.executeQuery();
+			prepareStatement.execute();			
 			prepareStatement.close();
 			
 			
@@ -30,6 +31,8 @@ public class MainModel {
 			
 		}
 	}
+	
+	//getSum method returns the sum of the Income column from the database
 	
 	public int getSum(){
 		PreparedStatement prepareStatement = null;
