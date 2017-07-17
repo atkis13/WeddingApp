@@ -5,7 +5,7 @@ public class SQLiteConnection {
 		try{
 			Class.forName("org.sqlite.JDBC");
 			Connection conn = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\user\\Desktop\\Wedding.sqlite");
-			return conn;
+			return conn;                                       //Location of the database
 		}catch (Exception e){
 			System.out.println(e); 
 			return null;
