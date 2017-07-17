@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
 
+// Tha main class
+//The main launcher of the app
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
